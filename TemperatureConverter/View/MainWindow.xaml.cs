@@ -25,6 +25,8 @@ namespace View
         public MainWindow()
         {
             InitializeComponent();
+
+            this.DataContext = this;
         }
 
         private double temperatureInKelvin;

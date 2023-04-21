@@ -46,7 +46,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Text="Number to Celsius" Style="{StaticResource labelStyle}"/>
-            <TextBox Grid.Row="1" Text="{Binding ElementName=mainWindow, Path=TemperatureInKelvin, Converter={StaticResource celsiusConverter},UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource boxStyle}"/>
+            <TextBox Grid.Row="1" Text="{Binding Path=TemperatureInKelvin, Converter={StaticResource celsiusConverter},UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource boxStyle}"/>
         </Grid>
         
         <Grid>
@@ -58,7 +58,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Text="Number to Fahrenheit" Style="{StaticResource labelStyle}"/>
-            <TextBox Grid.Row="1" Style="{StaticResource boxStyle}" Text="{Binding ElementName=slider, Path=Value, Converter={StaticResource fahrenheitConverter},UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Row="1" Style="{StaticResource boxStyle}" Text="{Binding Path=TemperatureInKelvin, Converter={StaticResource fahrenheitConverter},UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
         
         <Grid>
@@ -70,9 +70,9 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Text="Number to Kelvin" Style="{StaticResource labelStyle}"/>
-            <TextBox Grid.Row="1" Text="{Binding ElementName=slider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource boxStyle}"/>
+            <TextBox Grid.Row="1" Text="{Binding Path=TemperatureInKelvin, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource boxStyle}"/>
         </Grid>
-        <Slider x:Name="slider" Value="{Binding ElementName=mainWindow, Path=TemperatureInKelvin}" Minimum="0" Maximum="1000"/>
+        <Slider x:Name="slider" Value="{Binding Path=TemperatureInKelvin}" Minimum="0" Maximum="1000"/>
     </StackPanel>
     
 </Window>
